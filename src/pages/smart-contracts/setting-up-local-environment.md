@@ -93,25 +93,26 @@ With all the previous services running and a working smart contract, you are rea
 -> If you already have this project, or your own app, you can skip this step
 
 ```bash
-cd ..
-git clone https://github.com/blockstack/blockstack-todos.git
+git clone -b fix/update-to-stacks-js https://github.com/blockstack/blockstack-todos.git
 cd blockstack-todos
-npm i
+npm install --saveDev @stacks/network
+npm install
 npm run start
 ```
 
-The command will identify that port 3000 being used already (by the Explorer running inside Docker). Hit `Y` to accept using port 3001. Once the app is running, you should be able to open up `http://localhost:3001/` and see the homepage.
+The command will identify that port 3000 being used already (by the Explorer running inside Docker). Hit `Y` to accept using port 3001. Once the app is running, you should be able to open up `[http://localhost:3001/](http://localhost:3001/)` and see the homepage.
 
 ### Add contract calls
 
-Let's add a few sample contract calls to the application! You will use the `counter.clar` contract that you should be deployed already.
+Let's add a few sample contract calls to the application! You will use the `counter.clar` contract that should be deployed already.
 
-Inside the `src/components/TodoList.jsx` file, add a few more imports:
+Open the todo project with the editor of your choice. Inside the `src/components/TodoList.jsx` file, add a few more imports:
 
 ```js
-import { openContractCall } from '@stacks/connect';
-import { Button } from '@stacks/ui';
-import { callReadOnlyFunction, StacksMocknet, cvToString } from '@stacks/transactions';
+import { openContractCall } from '@blockstack/connect';
+import { Button } from '@blockstack/ui';
+import { callReadOnlyFunction, cvToString } from '@blockstack/stacks-transactions';
+import { StacksMocknet } from '@stacks/network';
 ```
 
 Next, add a read-only contract call method.
@@ -119,11 +120,11 @@ Next, add a read-only contract call method.
 -> Read-only contract calls do not require transactions to be created or broadcasted to the network. The read-only calls are regular API calls that return the result
 
 ```js
+...
+// const { userSession } = authOptions;
 
 // load user data from session
 const userData = userSession.loadUserData();
-
-...
 
 const doReadOnlyCall = async name => {
   const opts = {
