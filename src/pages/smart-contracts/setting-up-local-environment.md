@@ -44,7 +44,7 @@ docker-compose up -d
 
 -> Make sure your Docker service is up and running
 
-The initial start will take a few minutes. As soon as it is complete, you should be able to open up `http://localhost:3999/` and see:
+The initial start will take a few minutes. As soon as it is complete, you should be able to open up `[http://localhost:3999/](http://localhost:3999/)` and see:
 
 ```js
 {"status":"ready"}
@@ -60,7 +60,7 @@ When you develop your contract in a test-driven fashion, you will aim to complet
 
 ```shell
 # install the new CLI if not done yet
-npm install --global "https://github.com/blockstack/cli-blockstack#feature/stacks-2.0-tx"
+npm install --global @stacks/cli
 
 # deploy the contract:
 # deploy_contract <SOURCE_FILE> <CONTRACT_NAME> <FEE> <NONCE> <PAYMENT_KEY> -t -T <NETWORK_ADDRESS>
@@ -81,6 +81,7 @@ The CLI will respond with a new contract deploy transaction:
 If you have to deploy a new version of your contract, it is much simpler to reset the local mocknet that to deploy a new contract with a different identifier. Changing contract identifiers across projects can cause mistakes. To reset the mocknet, you can run the following inside the `stacks-local-dev` folder:
 
 ```bash
+# make sure you are inside the stacks-local-dev folder
 # shutdown and start back up
 docker-compose down; docker-compose up -d
 ```
