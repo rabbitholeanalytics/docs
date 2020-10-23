@@ -78,9 +78,12 @@ The CLI will respond with a new contract deploy transaction:
 }
 ```
 
-If you have to deploy a new version of your contract, it is much simpler to reset the local mocknet that to deploy a new contract with a different identifier. Changing contract identifiers across projects can cause mistakes.
+If you have to deploy a new version of your contract, it is much simpler to reset the local mocknet that to deploy a new contract with a different identifier. Changing contract identifiers across projects can cause mistakes. To reset the mocknet, you can run the following inside the `stacks-local-dev` folder:
 
-// TODO: how to reset the mocknet?
+```bash
+# shutdown and start back up
+docker-compose down; docker-compose up -d
+```
 
 ## Step 4: Create an app
 
