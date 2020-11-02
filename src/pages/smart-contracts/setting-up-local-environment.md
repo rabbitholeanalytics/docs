@@ -44,7 +44,7 @@ docker-compose up -d
 
 -> Make sure your Docker service is up and running
 
-The initial start will take a few minutes. As soon as it is complete, you should be able to open up `[http://localhost:3999/](http://localhost:3999/)` and see:
+The initial start will take a few minutes. As soon as it is complete, you should be able to open up [http://localhost:3999/](http://localhost:3999/) and see:
 
 ```js
 {"status":"ready"}
@@ -52,7 +52,7 @@ The initial start will take a few minutes. As soon as it is complete, you should
 
 ~> The Stacks Node is running on port `20443`, the Stacks Blockchain API on `3999` and the Stacks Explorer is on port `3000`.
 
-## Step 3: Deploy your contract
+## Step 2: Deploy your contract
 
 ~> Make sure you completed the [Counter tutorial](/smart-contracts/counter-tutorial). A working contract and test-driven development setup is recommended
 
@@ -86,21 +86,21 @@ If you have to deploy a new version of your contract, it is much simpler to rese
 docker-compose down; docker-compose up -d
 ```
 
-## Step 4: Create an app
+## Step 3: Create an app
 
 With all the previous services running and a working smart contract, you are ready to test the contract inside an app. We will reuse the [app from the todo tutorial](/authentication/building-todo-app).
 
 -> If you already have this project, or your own app, you can skip this step
 
 ```bash
-git clone -b fix/update-to-stacks-js https://github.com/blockstack/blockstack-todos.git
+git clone https://github.com/blockstack/blockstack-todos.git
 cd blockstack-todos
 npm install --saveDev @stacks/network
 npm install
 npm run start
 ```
 
-The command will identify that port 3000 being used already (by the Explorer running inside Docker). Hit `Y` to accept using port 3001. Once the app is running, you should be able to open up `[http://localhost:3001/](http://localhost:3001/)` and see the homepage.
+The command will identify that port 3000 being used already (by the Explorer running inside Docker). Hit `Y` to accept using port 3001. Once the app is running, you should be able to open up [http://localhost:3001/](http://localhost:3001/) and see the homepage.
 
 ### Add contract calls
 
