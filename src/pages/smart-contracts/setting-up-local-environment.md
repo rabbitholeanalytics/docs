@@ -74,7 +74,7 @@ The CLI will respond with a new contract deploy transaction:
 ```js
 {
   txid: '4bc11e1334c52852111142d55e5bbcfadbbb3441c44aa29a4bc507f7d2239377',
-  transaction: 'http://localhost:3000/txid/0x4bc11e1334c52852111142d55e5bbcfadbbb3441c44aa29a4bc507f7d2239377'
+  transaction: 'https://testnet-explorer.now.sh/txid/0x4bc11e1334c52852111142d55e5bbcfadbbb3441c44aa29a4bc507f7d2239377'
 }
 ```
 
@@ -95,12 +95,12 @@ With all the previous services running and a working smart contract, you are rea
 ```bash
 git clone https://github.com/blockstack/blockstack-todos.git
 cd blockstack-todos
-npm install --saveDev @stacks/network
+npm install --saveDev @stacks/network@1.0.0-beta.8
 npm install
 npm run start
 ```
 
-The command will identify that port 3000 being used already (by the Explorer running inside Docker). Hit `Y` to accept using port 3001. Once the app is running, you should be able to open up [http://localhost:3001/](http://localhost:3001/) and see the homepage.
+The command will identify that port 3000 being used already (by the Explorer running inside Docker). Hit `Y` to accept using port 3001. Once the app is running, a new windoe will open up ([http://localhost:3001/](http://localhost:3001/)), displaying the homepage.
 
 ### Add contract calls
 
@@ -142,7 +142,7 @@ const doReadOnlyCall = async name => {
 };
 ```
 
-Now, add a regular contract call method. This method will create and broadcast a new transaction to the network.
+Now, add a regular contract call method right below the privous code. This method will create and broadcast a new transaction to the network.
 
 ```js
 const doContractCall = async name => {
@@ -166,7 +166,7 @@ const doContractCall = async name => {
 };
 ```
 
-Finally, you need to add three buttons for the contract calls inside the `render` method:
+Finally, you need to add three buttons for the contract calls inside the `return` method on the bottom of the file:
 
 ```js
 <Box mt={[5, '60px']}>
