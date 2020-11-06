@@ -126,7 +126,7 @@ parses the markdown to get some information about the page, such as the title an
 
 #### Adding a new route
 
-If you are adding a new route, you have to add your route to a section contained within this file: `src/common/routes/all-routes.json`
+If you are adding a new route, you have to add your route to a section contained within this file: `src/common/navigation.yaml`
 
 ```bash showLineNumbers highlight=11
 docs.blockstack/
@@ -139,9 +139,7 @@ docs.blockstack/
     _includes/
     common/
       routes/
-        all-routes.json
-        get-routes.js
-        index.ts
+      navigation.yaml
     components/
     pages/
   types/
