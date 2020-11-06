@@ -20,7 +20,7 @@ This tutorial will walk you through the following steps:
 - Reviewing account history
 - Getting account balances
 
--> This tutorial is NodeJS-specific. If you would like to understand how to manage Stacks 2.0 accounts using a different language/framework, please [review the accounts guide](/stacks-blockchain/accounts).
+-> This tutorial is NodeJS-specific. If you would like to understand how to manage Stacks 2.0 accounts using a different language/framework, please [review the accounts guide](/understand-stacks-2.0/accounts).
 
 ## Requirements
 
@@ -38,7 +38,7 @@ First, install all the required libraries:
 npm install --save @stacks/transactions @stacks/blockchain-api-client cross-fetch
 ```
 
--> The API client is generated from the [OpenAPI specification](https://github.com/blockstack/stacks-blockchain-api/blob/master/docs/openapi.yaml) ([openapi-generator](https://github.com/OpenAPITools/openapi-generator)). Many other languages and frameworks are be supported by the generator.
+-> The API client is generated from the [OpenAPI specification](https://github.com/blockstack/understand-stacks-2.0-api/blob/master/docs/openapi.yaml) ([openapi-generator](https://github.com/OpenAPITools/openapi-generator)). Many other languages and frameworks are be supported by the generator.
 
 ## Step 2: Generating an account
 
@@ -85,7 +85,7 @@ const stacksAddress = getAddressFromPrivateKey(
   console.log(accountInfo);
 ```
 
--> Note: A "principal" is any entity that can have a token balance. Find more details in the [Principals guide](/smart-contracts/principals).
+-> Note: A "principal" is any entity that can have a token balance. Find more details in the [Principals guide](/write-smart-contracts/principals).
 
 The API will respond with a balance, nonce (starting at zero), and respective proofs:
 
@@ -181,7 +181,7 @@ The API will respond with a paginatable list of transactions associated with the
 }
 ```
 
-Please review the [API reference](https://blockstack.github.io/stacks-blockchain-api/#operation/get_account_transactions) for property definitions and details.
+Please review the [API reference](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_account_transactions) for property definitions and details.
 
 ### Handling pagination
 

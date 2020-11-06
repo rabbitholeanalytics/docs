@@ -21,7 +21,7 @@ This tutorial walks you through the following steps:
 - Checking transaction completion
 - Confirming updates account balances (optional)
 
--> This tutorial is NodeJS-specific. If you would like to understand how to initiate a token transfer by constructing and broadcasting transactions using a different language/framework, please [review the transactions guide](/stacks-blockchain/transactions).
+-> This tutorial is NodeJS-specific. If you would like to understand how to initiate a token transfer by constructing and broadcasting transactions using a different language/framework, please [review the transactions guide](/understand-stacks-2.0/transactions).
 
 ## Requirements
 
@@ -31,7 +31,7 @@ You will need [NodeJS](https://nodejs.org/en/download/) `8.12.0` or higher to co
 node --version
 ```
 
-You should also complete the [Managing accounts tutorial](/stacks-blockchain/managing-accounts). The following steps assume we have access to an existing Stacks 2.0 account.
+You should also complete the [Managing accounts tutorial](/understand-stacks-2.0/managing-accounts). The following steps assume we have access to an existing Stacks 2.0 account.
 
 ## Step 1: Installing libraries
 
@@ -41,11 +41,11 @@ First, install all the required libraries:
 npm install --save @stacks/transactions bn.js @stacks/blockchain-api-client cross-fetch
 ```
 
--> The API client is generated from the [OpenAPI specification](https://github.com/blockstack/stacks-blockchain-api/blob/master/docs/openapi.yaml) ([openapi-generator](https://github.com/OpenAPITools/openapi-generator)). Many other languages and frameworks are be supported by the generator.
+-> The API client is generated from the [OpenAPI specification](https://github.com/blockstack/understand-stacks-2.0-api/blob/master/docs/openapi.yaml) ([openapi-generator](https://github.com/OpenAPITools/openapi-generator)). Many other languages and frameworks are be supported by the generator.
 
 ## Step 2: Specifying a sender
 
-In order to build and sign transactions, you will need a Stacks private key. You can easily generate a new, random Stacks 2.0 sender key (see ["Generating an account" from the previous tutorial](/stacks-blockchain/managing-accounts#step-2-generating-an-account)).
+In order to build and sign transactions, you will need a Stacks private key. You can easily generate a new, random Stacks 2.0 sender key (see ["Generating an account" from the previous tutorial](/understand-stacks-2.0/managing-accounts#step-2-generating-an-account)).
 
 For this tutorial, we will use an existing Stacks account and instantiate the key object from a private key string:
 
@@ -126,7 +126,7 @@ The generation method will need a few more pieces of information, as specified i
 
 If not specified, the transaction builder will automatically estimate the fee. Estimated fee rate is supplied by a Stacks node so network access is required.
 
--> Learn more about fees in the [network guide](/stacks-blockchain/network#fees)
+-> Learn more about fees in the [network guide](/understand-stacks-2.0/network#fees)
 
 Another way to estimate the fee is to use the `estimateTransfer()` function after you have constructed a transaction:
 
@@ -160,7 +160,7 @@ const txId = await broadcastTransaction(transaction, testnet);
 
 As soon as the `broadcastTransaction` is completed, a transaction ID is returned.
 
-~> Keep in mind that the existence of a transaction ID does not mean the transaction has been successfully processed. Please review the [transaction lifecycle](/stacks-blockchain/transactions#lifecycle) for more details.
+~> Keep in mind that the existence of a transaction ID does not mean the transaction has been successfully processed. Please review the [transaction lifecycle](/understand-stacks-2.0/transactions#lifecycle) for more details.
 
 ### Serializing transactions
 
@@ -213,8 +213,8 @@ The API will respond with transaction details, including the `tx_status` propert
 }
 ```
 
-For all property formats and details, please review the [API reference](https://blockstack.github.io/stacks-blockchain-api/#operation/get_transaction_by_id).
+For all property formats and details, please review the [API reference](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_transaction_by_id).
 
 ## Step 6: Confirming balance (optional)
 
-Now that the token transfer is confirmed, we can verify the new account balance on the sender address by [following the "Getting account balances" steps from the previous tutorial](/stacks-blockchain/managing-accounts#step-5-getting-account-balances).
+Now that the token transfer is confirmed, we can verify the new account balance on the sender address by [following the "Getting account balances" steps from the previous tutorial](/understand-stacks-2.0/managing-accounts#step-5-getting-account-balances).

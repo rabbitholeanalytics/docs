@@ -11,9 +11,9 @@ STX amounts should be stored as integers (8 bytes long), and represent the amoun
 
 ## Fees
 
-Fees are used to incentivize miners to confirm transactions on the Stacks 2.0 blockchain. The fee is calculated based on the estimate fee rate and the size of the [raw transaction](http://localhost:3000/stacks-blockchain/transactions#serialization) in bytes. The fee rate is a market determined variable. For the [testnet](/stacks-blockchain/testnet), it is set to 1 micro-STX.
+Fees are used to incentivize miners to confirm transactions on the Stacks 2.0 blockchain. The fee is calculated based on the estimate fee rate and the size of the [raw transaction](http://localhost:3000/understand-stacks-2.0/transactions#serialization) in bytes. The fee rate is a market determined variable. For the [testnet](/understand-stacks-2.0/testnet), it is set to 1 micro-STX.
 
-Fee estimates can obtained through the [`GET /v2/fees/transfer`](https://blockstack.github.io/stacks-blockchain-api/#operation/get_fee_transfer) endpoint:
+Fee estimates can obtained through the [`GET /v2/fees/transfer`](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_fee_transfer) endpoint:
 
 ```bash
 curl 'https://stacks-node-api.blockstack.org/v2/fees/transfer'
@@ -41,7 +41,7 @@ Nonces are added to all transactions and help identify them in order to ensure t
 
 -> The consensus mechanism also ensures that transactions aren't "replayed" in two ways. First, nodes query its unspent transaction outputs (UTXOs) in order to satisfy their spending conditions in a new transaction. Second, messages sent between nodes review sequence numbers.
 
-When a new [token transfer transaction](/stacks-blockchain/transactions#stacks-token-transfer) is constructed, the most recent nonce of the account needs to fetched and set.
+When a new [token transfer transaction](/understand-stacks-2.0/transactions#stacks-token-transfer) is constructed, the most recent nonce of the account needs to fetched and set.
 
 ## Confirmations
 
@@ -49,7 +49,7 @@ The Stacks 2.0 network is anchored onto the bitcoin network. This allows transac
 
 The time to mine a block, to confirm transactions, will eventually match the expected "block time" of the bitcoin network: 10 minutes.
 
-The block time is hardcoded and will change throughout the implementation phases of the [testnet](/stacks-blockchain/testnet). The current block time can be obtained through the [`GET /extended/v1/info/network_block_times`](https://blockstack.github.io/stacks-blockchain-api/#operation/get_network_block_times) endpoint:
+The block time is hardcoded and will change throughout the implementation phases of the [testnet](/understand-stacks-2.0/testnet). The current block time can be obtained through the [`GET /extended/v1/info/network_block_times`](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_network_block_times) endpoint:
 
 ```bash
 curl 'https://stacks-node-api.blockstack.org/extended/v1/info/network_block_times'
@@ -72,11 +72,11 @@ The API will respond with the block time (in seconds):
 
 Smart contracts can expose public function calls. For functions that make state modifications to the blockchain, transactions need to be generated and broadcasted.
 
-However, for read-only function calls, transactions are **not** required. Instead, these calls can be done using the [Stacks Blockchain API](/references/stacks-blockchain-api).
+However, for read-only function calls, transactions are **not** required. Instead, these calls can be done using the [Stacks Blockchain API](/references/understand-stacks-2.0-api).
 
 -> Read-only function calls do not require transaction fees
 
-A read-only contract call can be done using the [`POST /v2/contracts/call-read/<stx_address>/<contract_name>/<function_name>`](https://blockstack.github.io/stacks-blockchain-api/#operation/call_read_only_function) endpoint:
+A read-only contract call can be done using the [`POST /v2/contracts/call-read/<stx_address>/<contract_name>/<function_name>`](https://blockstack.github.io/understand-stacks-2.0-api/#operation/call_read_only_function) endpoint:
 
 ```bash
 curl --location --request POST 'https://stacks-node-api.blockstack.org/v2/contracts/call-read/<stx_address>/<contract_name>/<function_name>' \
@@ -96,11 +96,11 @@ Sample response for a successful call:
 }
 ```
 
--> To set the function call arguments and read the result, [Clarity values](http://localhost:3000/stacks-blockchain/transactions#clarity-value-types) need to be serialized into a hexadecimal string. The [Stacks Transactions JS](https://github.com/blockstack/stacks.js/tree/master/packages/transactions) library supports these operations
+-> To set the function call arguments and read the result, [Clarity values](http://localhost:3000/understand-stacks-2.0/transactions#clarity-value-types) need to be serialized into a hexadecimal string. The [Stacks Transactions JS](https://github.com/blockstack/stacks.js/tree/master/packages/transactions) library supports these operations
 
 ## Querying
 
-Stacks 2.0 network details can be queried using the [Stacks Blockchain API](/references/stacks-blockchain-api) and the [status checker](http://status.test-blockstack.com/).
+Stacks 2.0 network details can be queried using the [Stacks Blockchain API](/references/understand-stacks-2.0-api) and the [status checker](http://status.test-blockstack.com/).
 
 ### Health check
 
@@ -144,15 +144,15 @@ Sample response:
 
 The easiest way of identifying the health is by looking at the `blockRateStatus` property:
 
-| **Block Rate Value** | **Status**                                                                                                                                                                                   |
-| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `0`                  | Online. All checks are successful                                                                                                                                                            |
-| `1`                  | Slow. The network produces new blocks at slower rate as expected. Transaction confirmation times will likely take longer than the [set block time](/stacks-blockchain/network#confirmations) |
-| `2`                  | Degraded. The network seems not to be fully operational                                                                                                                                      |
+| **Block Rate Value** | **Status**                                                                                                                                                                                       |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `0`                  | Online. All checks are successful                                                                                                                                                                |
+| `1`                  | Slow. The network produces new blocks at slower rate as expected. Transaction confirmation times will likely take longer than the [set block time](/understand-stacks-2.0/network#confirmations) |
+| `2`                  | Degraded. The network seems not to be fully operational                                                                                                                                          |
 
 ### Network info
 
-The network information can be obtained using the [`GET /v2/info`](https://blockstack.github.io/stacks-blockchain-api/#operation/get_core_api_info) endpoint:
+The network information can be obtained using the [`GET /v2/info`](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_core_api_info) endpoint:
 
 ```bash
 curl 'https://stacks-node-api.blockstack.org/v2/info'

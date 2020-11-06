@@ -89,5 +89,5 @@ sudo systemctl restart blockstack_api
 sudo systemctl restart nginx
 ```
 
-If you run into any issues, please [submit a Github issue](https://github.com/blockstack/stacks-blockchain/issues) and we'll update these
+If you run into any issues, please [submit a Github issue](https://github.com/blockstack/understand-stacks-2.0/issues) and we'll update these
 instructions.

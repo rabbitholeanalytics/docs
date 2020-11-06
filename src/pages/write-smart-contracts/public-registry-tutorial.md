@@ -12,7 +12,7 @@ images:
 
 ## Introduction
 
-The [Stacks Blockchain API](/references/stacks-blockchain-api) is an API that helps app developers to view and use the state of the Stacks 2.0 Blockchain.
+The [Stacks Blockchain API](/references/understand-stacks-2.0-api) is an API that helps app developers to view and use the state of the Stacks 2.0 Blockchain.
 
 In this tutorial you will extend a to-do app to share individual lists publicly using the Stacks 2.0 blockchain. The to-do app was built in the [to-do app tutorial](/authentication/building-todo-app). The registry of shared to-do lists is implemented by a Clarity smart contract named [`todo-registry`](https://github.com/friedger/blockstack-todos/blob/tut/public-registry/contracts/todo-registry.clar). Data from this contract will be shown in the to-do app. The final app will look like this:
 
@@ -33,14 +33,14 @@ and confirm that all systems are operational. If some systems seem to have issue
 
 Furthermore, the to-do app will interact with a smart contract deployed as `ST25GX7MJA4FGEYYH5E7EBW30BYA4VG4VC1XETXXZ.todo-registry`, please verify that this contract exists by searching for it in the sandbox of the [testnet explorer](https://testnet-explorer.blockstack.org/txid/ST25GX7MJA4FGEYYH5E7EBW30BYA4VG4VC1XETXXZ.todo-registry).
 
-Alternatively, you can take the [contract source code](https://github.com/friedger/blockstack-todos/blob/tut/step1/contracts/todo-registry.clar) and deploy the contract as described in the [hello world tutorial](/smart-contracts/hello-world-tutorial#step-5-deploy-the-contract). Then you just have to use your own contract address and name in this tutorial.
+Alternatively, you can take the [contract source code](https://github.com/friedger/blockstack-todos/blob/tut/step1/contracts/todo-registry.clar) and deploy the contract as described in the [hello world tutorial](/write-smart-contracts/hello-world-tutorial#step-5-deploy-the-contract). Then you just have to use your own contract address and name in this tutorial.
 
 ### Tutorials
 
 You should have followed the instructions of the to-do app tutorial. You should have the code ready on your local machine. It is also helpful to have a basic understanding of Clarity as explained in the counter tutorial. If you are using mocknet or a new, empty testnet you can create transactions following the tutorial about signing transactions.
 
 [@page-reference | grid]
-| /authentication/building-todo-app, /smart-contracts/counter-tutorial, /smart-contracts/signing-transactions
+| /authentication/building-todo-app, /write-smart-contracts/counter-tutorial, /write-smart-contracts/signing-transactions
 
 ### Check your to-do app
 
@@ -122,7 +122,7 @@ export const PublicUrlRegistrar = ({ userSession }) => {
 };
 ```
 
-It is a simple button that calls `doContractCall` method of the Connect library when clicked. The method makes an api call to the Stacks authenticator. The authenticator creates a contract call transaction that is signed by the user and then it is broadcasted to the Stacks 2.0 blockchain as explained in the [transaction signing tutorial](/smart-contracts/signing-transactions).
+It is a simple button that calls `doContractCall` method of the Connect library when clicked. The method makes an api call to the Stacks authenticator. The authenticator creates a contract call transaction that is signed by the user and then it is broadcasted to the Stacks 2.0 blockchain as explained in the [transaction signing tutorial](/write-smart-contracts/signing-transactions).
 
 Note how the arguments are created using `bufferCVFromString`. There are similar methods for all other Clarity types, like `uintCV` or `trueCV`. See the [documentation](https://github.com/blockstack/stacks-transactions-js#constructing-clarity-values) of the stacks-transactions library for more details.
 
@@ -141,7 +141,7 @@ Now, you should be able to register your public to-do list on the blockchain whe
 
 ## Waiting for transactions
 
-The method `doContractCall` has a callback `finished` that is called after the user confirmed the transaction. This does not mean that the blockchain has accepted and included the transaction on the blockchain. It just means that the transaction was broadcasted to the network. The transaction id is returned in the `finished` callback as `data.txId`. This id can be used to find the transaction and its processing status on the blockchain. The [Stack Blockchain API client library](https://blockstack.github.io/stacks-blockchain-api/client/index.html) provides a convenient method to subscribe to the progress using web sockets.
+The method `doContractCall` has a callback `finished` that is called after the user confirmed the transaction. This does not mean that the blockchain has accepted and included the transaction on the blockchain. It just means that the transaction was broadcasted to the network. The transaction id is returned in the `finished` callback as `data.txId`. This id can be used to find the transaction and its processing status on the blockchain. The [Stack Blockchain API client library](https://blockstack.github.io/understand-stacks-2.0-api/client/index.html) provides a convenient method to subscribe to the progress using web sockets.
 
 ### Step 1: Add depedency
 
@@ -445,7 +445,7 @@ In addition to `tx_result`, the transaction object also contains a timestamp (`b
 }
 ```
 
--> Note: The `AccountsApi` and other Api methods provide parameters to page through the results using `limit` and `offset`. See [the docs](https://blockstack.github.io/stacks-blockchain-api/client/interfaces/getaccounttransactionsrequest.html) for more details.
+-> Note: The `AccountsApi` and other Api methods provide parameters to page through the results using `limit` and `offset`. See [the docs](https://blockstack.github.io/understand-stacks-2.0-api/client/interfaces/getaccounttransactionsrequest.html) for more details.
 
 => Congratulations! You just implemented a list of recent activities that was fetched from the blockchain.
 
@@ -453,7 +453,7 @@ In addition to `tx_result`, the transaction object also contains a timestamp (`b
 
 ## Fetch the first to-do list
 
-There are two other ways to get state information from the blockchain: read-only functions and data map entries. Read-only functions were already discussed in the [Clarity counter tutorial](/smart-contracts/counter-tutorial). They do not require a transaction to complete. Data maps in Clarity are maps that can be read by any user. See the [Clarity reference](https://docs.blockstack.org/references/language-functions#define-map) for more details.
+There are two other ways to get state information from the blockchain: read-only functions and data map entries. Read-only functions were already discussed in the [Clarity counter tutorial](/write-smart-contracts/counter-tutorial). They do not require a transaction to complete. Data maps in Clarity are maps that can be read by any user. See the [Clarity reference](https://docs.blockstack.org/references/language-functions#define-map) for more details.
 
 The `todo-registry` contract defines a read-only function `owner-of?` that returns the owner of a registry entry and a data map for details about entries:
 

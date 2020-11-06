@@ -1,8 +1,8 @@
 sections:
   - pages:
       - path: /
-      - path: /build-an-app # is an overview page
-      - path: /smart-contracts
+      - path: /build-apps # is an overview page
+      - path: /write-smart-contracts
         pages:
           - path: /overview
           - path: /principals
@@ -14,7 +14,33 @@ sections:
               - path: /testing-contracts
               - path: /public-registry-tutorial
               - path: /signing-transactions
-      - path: /mining # is an overview page
+      - path: /start-mining # is an overview page
+      - path: /understand-stacks-2.0
+        pages:
+          - path: /overview
+          - path: /testnet
+          - path: /accounts
+          - path: /transactions
+          - path: /network
+          - path: /stacking
+          - path: /local-development
+        sections:
+          - title: Tutorials
+            pages:
+              - path: /managing-accounts
+              - path: /sending-tokens
+              - path: /running-testnet-node
+              - path: /integrate-stacking
+          - title: Stacks 1.0
+            pages:
+              - path: /stacks-1.0-info
+              - path: /best-practices
+              - path: /wire-format
+              - path: /atlas-overview
+              - path: /atlas-how-it-works
+              - path: /atlas-usage
+              - path: /install-api
+              - path: /installing-memcached
 
   - title: Technology
     pages:
@@ -45,32 +71,6 @@ sections:
           - title: Tutorials
             pages:
               - path: /integrate-indexing
-      - path: /stacks-blockchain
-        pages:
-          - path: /overview
-          - path: /testnet
-          - path: /accounts
-          - path: /transactions
-          - path: /network
-          - path: /stacking
-          - path: /local-development
-        sections:
-          - title: Tutorials
-            pages:
-              - path: /managing-accounts
-              - path: /sending-tokens
-              - path: /running-testnet-node
-              - path: /integrate-stacking
-          - title: Stacks 1.0
-            pages:
-              - path: /stacks-1.0-info
-              - path: /best-practices
-              - path: /wire-format
-              - path: /atlas-overview
-              - path: /atlas-how-it-works
-              - path: /atlas-usage
-              - path: /install-api
-              - path: /installing-memcached
       - path: /stacks-wallet
         pages:
           - path: /overview
@@ -93,7 +93,7 @@ sections:
         pages:
           - path: /blockstack-cli
           - path: /stacking-contract
-          - path: /stacks-blockchain-api
+          - path: /understand-stacks-2.0-api
           - path: /stacks-node-configuration
           - external:
               href: 'https://blockstack.github.io/stacks.js/'

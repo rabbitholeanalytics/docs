@@ -29,7 +29,7 @@ This tutorial highlights the following functionality:
 
 ## Requirements
 
-First, you'll need to understand the [Stacking mechanism](/stacks-blockchain/stacking).
+First, you'll need to understand the [Stacking mechanism](/understand-stacks-2.0/stacking).
 
 You'll also need [NodeJS](https://nodejs.org/en/download/) `8.12.0` or higher to complete this tutorial. You can verify your installation by opening up your terminal and run the following command:
 
@@ -39,19 +39,19 @@ node --version
 
 ## Overview
 
-In this tutorial, we'll implement the Stacking flow laid out in the [Stacking guide](/stacks-blockchain/stacking#stacking-flow).
+In this tutorial, we'll implement the Stacking flow laid out in the [Stacking guide](/understand-stacks-2.0/stacking#stacking-flow).
 
 -> Check out the sample source code for this tutorial in this GitHub repository: [stacking-integration-sample](https://github.com/agraebe/stacking-integration-sample)
 
 ## Step 1: Integrate libraries
 
-Install the stacks transactions library and an API client for the [Stacks 2.0 Blockchain API](/references/stacks-blockchain):
+Install the stacks transactions library and an API client for the [Stacks 2.0 Blockchain API](/references/understand-stacks-2.0):
 
 ```shell
 npm install --save @blockstack/stacks-transactions @stacks/blockchain-api-client c32check cross-fetch bn.js
 ```
 
--> The API client is generated from the [OpenAPI specification](https://github.com/blockstack/stacks-blockchain-api/blob/master/docs/openapi.yaml) ([openapi-generator](https://github.com/OpenAPITools/openapi-generator)). Many other languages and frameworks are supported by the generator.
+-> The API client is generated from the [OpenAPI specification](https://github.com/blockstack/understand-stacks-2.0-api/blob/master/docs/openapi.yaml) ([openapi-generator](https://github.com/OpenAPITools/openapi-generator)). Many other languages and frameworks are supported by the generator.
 
 ## Step 2: Generating an account
 
@@ -101,7 +101,7 @@ const stxAddress = getAddressFromPrivateKey(
 );
 ```
 
--> Review the [accounts guide](/stacks-blockchain/accounts) for more details
+-> Review the [accounts guide](/understand-stacks-2.0/accounts) for more details
 
 ## Step 3: Display stacking info
 
@@ -117,7 +117,7 @@ const blocktimeInfo = await info.getNetworkBlockTimes();
 console.log({ poxInfo, coreInfo, blocktimeInfo });
 ```
 
--> Check out the API references for the 3 endpoints used here: [GET /v2/info](https://blockstack.github.io/stacks-blockchain-api/#operation/get_core_api_info), [GET v2/pox](https://blockstack.github.io/stacks-blockchain-api/#operation/get_pox_info), and [GET /extended/v1/info/network_block_times](https://blockstack.github.io/stacks-blockchain-api/#operation/get_network_block_times)
+-> Check out the API references for the 3 endpoints used here: [GET /v2/info](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_core_api_info), [GET v2/pox](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_pox_info), and [GET /extended/v1/info/network_block_times](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_network_block_times)
 
 The object, including PoX, core, and block time information, looks like this:
 
@@ -276,7 +276,7 @@ const response = cvToString(deserializeCV(Buffer.from(isEligible.result.slice(2)
 
 if (response.startsWith(`(err `)) {
   // user cannot participate in stacking
-  // error codes: https://github.com/blockstack/stacks-blockchain/blob/master/src/chainstate/stacks/boot/pox.clar#L2
+  // error codes: https://github.com/blockstack/understand-stacks-2.0/blob/master/src/chainstate/stacks/boot/pox.clar#L2
   console.log({ isEligible: false, errorCode: response }));
   return;
 }
@@ -286,7 +286,7 @@ console.log({ isEligible: true });
 
 If the user is eligible, the stacking action should be enabled on the UI. If not, the respective error message should be shown to the user.
 
--> For more information on this read-only API call, please review the [API references](https://blockstack.github.io/stacks-blockchain-api/#operation/call_read_only_function)
+-> For more information on this read-only API call, please review the [API references](https://blockstack.github.io/understand-stacks-2.0-api/#operation/call_read_only_function)
 
 ## Step 5: Add stacking action
 
@@ -347,7 +347,7 @@ const waitForTransactionSuccess = txId =>
 const resp = await waitForTransactionSuccess(contractCall.txId);
 ```
 
--> More details on the lifecycle of transactions can be found in the [transactions guide](/stacks-blockchain/transactions#lifecycle)
+-> More details on the lifecycle of transactions can be found in the [transactions guide](/understand-stacks-2.0/transactions#lifecycle)
 
 Alternatively to the polling, the Stacks Blockchain API client library offers WebSockets. WebSockets can be used to subscribe to specific updates, like transaction status changes. Here is an example:
 

@@ -46,7 +46,7 @@ source $HOME/.cargo/env
 Next, clone this repository:
 
 ```bash
-git clone https://github.com/blockstack/stacks-blockchain.git; cd stacks-blockchain
+git clone https://github.com/blockstack/understand-stacks-2.0.git; cd stacks-blockchain
 ```
 
 Install the Stacks node by running:
@@ -89,7 +89,7 @@ INFO [1588108047.585] [src/chainstate/stacks/index/marf.rs:732] First-ever block
 
 **Awesome! Your node is now connected to the testnet network.**
 
-Your node will receive new blocks when they are produced, and you can use the [Stacks Node RPC API](/references/stacks-blockchain-api#stacks-node-rpc-api) to send transactions, fetch information for contracts and accounts, and more.
+Your node will receive new blocks when they are produced, and you can use the [Stacks Node RPC API](/references/understand-stacks-2.0-api#stacks-node-rpc-api) to send transactions, fetch information for contracts and accounts, and more.
 
 ## Optional: Running with Docker
 
@@ -107,7 +107,7 @@ docker run -d \
   -e BLOCKSTACK_DEBUG="1" \
   -p 20443:20443 \
   -p 20444:20444 \
-  blockstack/stacks-blockchain:latest \
+  blockstack/understand-stacks-2.0:latest \
 /bin/stacks-node krypton
 ```
 
@@ -121,7 +121,7 @@ docker logs -f stacks_follower
 
 ## Optional: Running in Kubernetes with Helm
 
-In addition, you're also able to run a testnet node in a Kubernetes cluster using the [stacks-blockchain Helm chart](https://github.com/blockstack/stacks-blockchain/tree/master/deployment/helm/stacks-blockchain).
+In addition, you're also able to run a testnet node in a Kubernetes cluster using the [stacks-blockchain Helm chart](https://github.com/blockstack/understand-stacks-2.0/tree/master/deployment/helm/understand-stacks-2.0).
 
 Ensure you have the following prerequisites installed on your machine:
 
@@ -134,7 +134,7 @@ To install the chart with the release name `my-release` and run the node as a fo
 ```bash
 minikube start # Only run this if standing up a local Kubernetes cluster
 helm repo add blockstack https://charts.blockstack.xyz
-helm install my-release blockstack/stacks-blockchain
+helm install my-release blockstack/understand-stacks-2.0
 ```
 
 You can review the node logs with this command:
@@ -143,11 +143,11 @@ You can review the node logs with this command:
 kubectl logs -l app.kubernetes.io/name=stacks-blockchain
 ```
 
-For more information on the Helm chart and configuration options, please refer to the [chart's homepage](https://github.com/blockstack/stacks-blockchain/tree/master/deployment/helm/stacks-blockchain).
+For more information on the Helm chart and configuration options, please refer to the [chart's homepage](https://github.com/blockstack/understand-stacks-2.0/tree/master/deployment/helm/understand-stacks-2.0).
 
 ## Optional: Mining Stacks token
 
 Now that you have a running testnet node, you can easily set up a miner.
 
 [@page-reference | inline]
-| /mining
+| /start-mining

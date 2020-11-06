@@ -7,16 +7,16 @@ duration: 10 minutes
 tags:
   - tutorial
 images:
-  large: /images/pages/mining.svg
-  sm: /images/pages/mining-sm.svg
+  large: /images/pages/start-mining.svg
+  sm: /images/pages/start-mining-sm.svg
 ---
 
 ## Introduction
 
-Make sure you've followed the [Running testnet node](/stacks-blockchain/running-testnet-node) tutorial. Once completed it's only a few more steps to run a proof-of-burn miner on the testnet.
+Make sure you've followed the [Running testnet node](/understand-stacks-2.0/running-testnet-node) tutorial. Once completed it's only a few more steps to run a proof-of-burn miner on the testnet.
 
 [@page-reference | inline]
-| /stacks-blockchain/running-testnet-node
+| /understand-stacks-2.0/running-testnet-node
 
 ## Running a miner
 
@@ -207,7 +207,7 @@ docker run -d \
   -v "$HOME/stacks/Config.toml:/src/stacks-node/Config.toml" \
   -p 20443:20443 \
   -p 20444:20444 \
-  blockstack/stacks-blockchain:latest \
+  blockstack/understand-stacks-2.0:latest \
 /bin/stacks-node start --config /src/stacks-node/Config.toml
 ```
 
@@ -219,7 +219,7 @@ docker logs -f stacks_miner
 
 ## Optional: Running in Kubernetes with Helm
 
-In addition, you're also able to run a testnet node in a Kubernetes cluster using the [stacks-blockchain Helm chart](https://github.com/blockstack/stacks-blockchain/tree/master/deployment/helm/stacks-blockchain).
+In addition, you're also able to run a testnet node in a Kubernetes cluster using the [stacks-blockchain Helm chart](https://github.com/blockstack/understand-stacks-2.0/tree/master/deployment/helm/understand-stacks-2.0).
 
 Ensure you have the following prerequisites installed on your machine:
 
@@ -250,7 +250,7 @@ To install the chart with the release name `my-release` and run the node as a mi
 ```bash
 minikube start # Only run this if standing up a local Kubernetes cluster
 helm repo add blockstack https://charts.blockstack.xyz
-helm install my-release blockstack/stacks-blockchain \
+helm install my-release blockstack/understand-stacks-2.0 \
   --set config.node.miner=true \
   --set config.node.seed="replace-with-your-privateKey-from-generate-keychain-step"
 ```
@@ -261,4 +261,4 @@ You can review the node logs with this command:
 kubectl logs -l app.kubernetes.io/name=stacks-blockchain
 ```
 
-For more information on the Helm chart and configuration options, please refer to the [chart's homepage](https://github.com/blockstack/stacks-blockchain/tree/master/deployment/helm/stacks-blockchain).
+For more information on the Helm chart and configuration options, please refer to the [chart's homepage](https://github.com/blockstack/understand-stacks-2.0/tree/master/deployment/helm/understand-stacks-2.0).
