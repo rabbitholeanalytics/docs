@@ -52,6 +52,7 @@ sections:
           - path: /accounts
           - path: /transactions
           - path: /network
+          - path: /api
           - path: /stacking
           - path: /local-development
         sections:

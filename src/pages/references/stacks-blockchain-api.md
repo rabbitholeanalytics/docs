@@ -9,10 +9,6 @@ The Stacks 2.0 Blockchain API was built to maintain pageable materialized views 
 
 ~> Note: Using this API requires you to trust the server, but provides a faster onboarding experience. It also addresses performance issues for which querying a node itself would be too slow or difficult
 
-## Client library
-
-A generated JS Client is available for consumption of this API. The client library enables typesafe REST and WebSocket communication. [Please review the client documentation for more details](https://blockstack.github.io/stacks-blockchain-api/client/index.html).
-
 ## Stacks Node RPC API
 
 The Stacks 2.0 Blockchain API is centrally-hosted. However, every running Stacks node exposes an RPC API, which allows you to interact with the underlying blockchain. Instead of using a centrally-hosted API, you can directly access the RPC API of a locally-hosted Node.
