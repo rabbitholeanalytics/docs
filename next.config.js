@@ -357,7 +357,11 @@ async function redirects() {
       destination: '/understand-stacks-2.0/overview',
       permanent: true,
     },
-    { source: '/write-smart-contracts', destination: '/smart-contracts/overview', permanent: true },
+    {
+      source: '/write-smart-contracts',
+      destination: '/write-smart-contracts/overview',
+      permanent: true,
+    },
     { source: '/data-storage', destination: '/data-storage/overview', permanent: true },
     { source: '/data-indexing', destination: '/data-storage/indexing-overview', permanent: true },
     { source: '/stacks-wallet', destination: '/stacks-wallet/overview', permanent: true },
