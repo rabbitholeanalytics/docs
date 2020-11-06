@@ -41,7 +41,7 @@ First, install all the required libraries:
 npm install --save @stacks/transactions bn.js @stacks/blockchain-api-client cross-fetch
 ```
 
--> The API client is generated from the [OpenAPI specification](https://github.com/blockstack/understand-stacks-2.0-api/blob/master/docs/openapi.yaml) ([openapi-generator](https://github.com/OpenAPITools/openapi-generator)). Many other languages and frameworks are be supported by the generator.
+-> The API client is generated from the [OpenAPI specification](https://github.com/blockstack/stacks-blockchain-api/blob/master/docs/openapi.yaml) ([openapi-generator](https://github.com/OpenAPITools/openapi-generator)). Many other languages and frameworks are be supported by the generator.
 
 ## Step 2: Specifying a sender
 
@@ -213,7 +213,7 @@ The API will respond with transaction details, including the `tx_status` propert
 }
 ```
 
-For all property formats and details, please review the [API reference](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_transaction_by_id).
+For all property formats and details, please review the [API reference](https://blockstack.github.io/stacks-blockchain-api/#operation/get_transaction_by_id).
 
 ## Step 6: Confirming balance (optional)
 

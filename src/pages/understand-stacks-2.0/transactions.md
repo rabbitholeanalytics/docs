@@ -43,7 +43,7 @@ The Stacks 2.0 supports a set of different transaction types:
 
 -> The current [Naming service](/naming-services/overview) is unrelated to Stacks 2.0 and there is no naming-specific transaction type. A replacement for the functionality will be implemented as a smart contract.
 
-A sample of each transaction type can be found in the [Stacks Blockchain API response definition for transactions](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_transaction_by_id).
+A sample of each transaction type can be found in the [Stacks Blockchain API response definition for transactions](https://blockstack.github.io/stacks-blockchain-api/#operation/get_transaction_by_id).
 
 ~> Read-only contract call calls do **not** require transactions. Read more about it in the [network guide](/understand-stacks-2.0/network#read-only-function-calls).
 
@@ -266,7 +266,7 @@ A well-formed transaction construct is encoded in [Recursive Length Prefix ("RLP
 
 In order to broadcast transactions to and between nodes on the network, RLP data is represented in hexadecimal string (also called the **raw format**).
 
-To support an API-friendly and human-readable representation, the [Stacks Blockchain API](/references/understand-stacks-2.0-api) converts transactions into a JSON format.
+To support an API-friendly and human-readable representation, the [Stacks Blockchain API](/references/stacks-blockchain-api) converts transactions into a JSON format.
 
 => [The Stacks Transactions JS library](https://github.com/blockstack/stacks.js) supports serialization of transactions.
 
@@ -378,7 +378,7 @@ A sponsored transaction is one where a second signer sets and pays the transacti
 
 ## Broadcast
 
-With a serialized transaction in the [raw format](#raw-format), it can be broadcasted to the network using the [`POST /v2/transactions`](https://blockstack.github.io/understand-stacks-2.0-api/#operation/post_core_node_transactions) endpoint:
+With a serialized transaction in the [raw format](#raw-format), it can be broadcasted to the network using the [`POST /v2/transactions`](https://blockstack.github.io/stacks-blockchain-api/#operation/post_core_node_transactions) endpoint:
 
 ```bash
 curl --location --request POST 'https://stacks-node-api.blockstack.org/v2/transactions' \
@@ -395,17 +395,17 @@ There is no explicit time constraint between the construction of a valid signed 
 
 ## Querying
 
-Transactions on the Stacks 2.0 network can be queried using the [Stacks Blockchain API](/references/understand-stacks-2.0-api). The API exposes two interfaces, a RESTful JSON API and a WebSockets API.
+Transactions on the Stacks 2.0 network can be queried using the [Stacks Blockchain API](/references/stacks-blockchain-api). The API exposes two interfaces, a RESTful JSON API and a WebSockets API.
 
 For convenience, a Postman Collection was created and published: [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/614feab5c108d292bffa)
 
--> Note: The API can be easily consumed using a generated [JS client library](https://blockstack.github.io/understand-stacks-2.0-api/client/index.html). The generator uses an OpenAPI specification and supports other languages and frameworks.
+-> Note: The API can be easily consumed using a generated [JS client library](https://blockstack.github.io/stacks-blockchain-api/client/index.html). The generator uses an OpenAPI specification and supports other languages and frameworks.
 
 @include "stacks-api-pagination.md"
 
 ### Get recent transactions
 
-Recent transactions can be obtained through the [`GET /extended/v1/tx`](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_transaction_list) endpoint:
+Recent transactions can be obtained through the [`GET /extended/v1/tx`](https://blockstack.github.io/stacks-blockchain-api/#operation/get_transaction_list) endpoint:
 
 ```bash
 curl 'https://stacks-node-api.blockstack.org/extended/v1/tx'
@@ -442,7 +442,7 @@ Sample response:
 
 ### Get mempool transactions
 
-Mempool (registered, but not processed) transactions can be obtained using the [`GET /extended/v1/tx/mempool`](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_mempool_transaction_list) endpoint:
+Mempool (registered, but not processed) transactions can be obtained using the [`GET /extended/v1/tx/mempool`](https://blockstack.github.io/stacks-blockchain-api/#operation/get_mempool_transaction_list) endpoint:
 
 ```bash
 curl 'https://stacks-node-api.blockstack.org/extended/v1/tx/mempool'
@@ -488,7 +488,7 @@ curl 'https://stacks-node-api.blockstack.org/extended/v1/tx/?type=contract_call'
 
 ### Get transaction by ID
 
-A specific transaction can be obtained using the [`GET /extended/v1/tx/<tx_id>`](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_transaction_by_id) endpoint:
+A specific transaction can be obtained using the [`GET /extended/v1/tx/<tx_id>`](https://blockstack.github.io/stacks-blockchain-api/#operation/get_transaction_by_id) endpoint:
 
 ```bash
 curl 'https://stacks-node-api.blockstack.org/extended/v1/tx/<tx_id>'

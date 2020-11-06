@@ -38,7 +38,7 @@ First, install all the required libraries:
 npm install --save @stacks/transactions @stacks/blockchain-api-client cross-fetch
 ```
 
--> The API client is generated from the [OpenAPI specification](https://github.com/blockstack/understand-stacks-2.0-api/blob/master/docs/openapi.yaml) ([openapi-generator](https://github.com/OpenAPITools/openapi-generator)). Many other languages and frameworks are be supported by the generator.
+-> The API client is generated from the [OpenAPI specification](https://github.com/blockstack/stacks-blockchain-api/blob/master/docs/openapi.yaml) ([openapi-generator](https://github.com/OpenAPITools/openapi-generator)). Many other languages and frameworks are be supported by the generator.
 
 ## Step 2: Generating an account
 
@@ -181,7 +181,7 @@ The API will respond with a paginatable list of transactions associated with the
 }
 ```
 
-Please review the [API reference](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_account_transactions) for property definitions and details.
+Please review the [API reference](https://blockstack.github.io/stacks-blockchain-api/#operation/get_account_transactions) for property definitions and details.
 
 ### Handling pagination
 

@@ -13,7 +13,7 @@ STX amounts should be stored as integers (8 bytes long), and represent the amoun
 
 Fees are used to incentivize miners to confirm transactions on the Stacks 2.0 blockchain. The fee is calculated based on the estimate fee rate and the size of the [raw transaction](http://localhost:3000/understand-stacks-2.0/transactions#serialization) in bytes. The fee rate is a market determined variable. For the [testnet](/understand-stacks-2.0/testnet), it is set to 1 micro-STX.
 
-Fee estimates can obtained through the [`GET /v2/fees/transfer`](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_fee_transfer) endpoint:
+Fee estimates can obtained through the [`GET /v2/fees/transfer`](https://blockstack.github.io/stacks-blockchain-api/#operation/get_fee_transfer) endpoint:
 
 ```bash
 curl 'https://stacks-node-api.blockstack.org/v2/fees/transfer'
@@ -49,7 +49,7 @@ The Stacks 2.0 network is anchored onto the bitcoin network. This allows transac
 
 The time to mine a block, to confirm transactions, will eventually match the expected "block time" of the bitcoin network: 10 minutes.
 
-The block time is hardcoded and will change throughout the implementation phases of the [testnet](/understand-stacks-2.0/testnet). The current block time can be obtained through the [`GET /extended/v1/info/network_block_times`](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_network_block_times) endpoint:
+The block time is hardcoded and will change throughout the implementation phases of the [testnet](/understand-stacks-2.0/testnet). The current block time can be obtained through the [`GET /extended/v1/info/network_block_times`](https://blockstack.github.io/stacks-blockchain-api/#operation/get_network_block_times) endpoint:
 
 ```bash
 curl 'https://stacks-node-api.blockstack.org/extended/v1/info/network_block_times'
@@ -72,11 +72,11 @@ The API will respond with the block time (in seconds):
 
 Smart contracts can expose public function calls. For functions that make state modifications to the blockchain, transactions need to be generated and broadcasted.
 
-However, for read-only function calls, transactions are **not** required. Instead, these calls can be done using the [Stacks Blockchain API](/references/understand-stacks-2.0-api).
+However, for read-only function calls, transactions are **not** required. Instead, these calls can be done using the [Stacks Blockchain API](/references/stacks-blockchain-api).
 
 -> Read-only function calls do not require transaction fees
 
-A read-only contract call can be done using the [`POST /v2/contracts/call-read/<stx_address>/<contract_name>/<function_name>`](https://blockstack.github.io/understand-stacks-2.0-api/#operation/call_read_only_function) endpoint:
+A read-only contract call can be done using the [`POST /v2/contracts/call-read/<stx_address>/<contract_name>/<function_name>`](https://blockstack.github.io/stacks-blockchain-api/#operation/call_read_only_function) endpoint:
 
 ```bash
 curl --location --request POST 'https://stacks-node-api.blockstack.org/v2/contracts/call-read/<stx_address>/<contract_name>/<function_name>' \
@@ -100,7 +100,7 @@ Sample response for a successful call:
 
 ## Querying
 
-Stacks 2.0 network details can be queried using the [Stacks Blockchain API](/references/understand-stacks-2.0-api) and the [status checker](http://status.test-blockstack.com/).
+Stacks 2.0 network details can be queried using the [Stacks Blockchain API](/references/stacks-blockchain-api) and the [status checker](http://status.test-blockstack.com/).
 
 ### Health check
 
@@ -152,7 +152,7 @@ The easiest way of identifying the health is by looking at the `blockRateStatus`
 
 ### Network info
 
-The network information can be obtained using the [`GET /v2/info`](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_core_api_info) endpoint:
+The network information can be obtained using the [`GET /v2/info`](https://blockstack.github.io/stacks-blockchain-api/#operation/get_core_api_info) endpoint:
 
 ```bash
 curl 'https://stacks-node-api.blockstack.org/v2/info'

@@ -235,7 +235,7 @@ prometheus_bind = "0.0.0.0:9153"
 
 ### Section: events_observer (optional)
 
-Contains options for watching events emitted by a local [stacks-blockchain-api](https://github.com/blockstack/understand-stacks-2.0-api) service.
+Contains options for watching events emitted by a local [stacks-blockchain-api](https://github.com/blockstack/stacks-blockchain-api) service.
 
 -> This section can be repeated multiple times.
 

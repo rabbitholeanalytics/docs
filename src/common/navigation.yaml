@@ -93,7 +93,7 @@ sections:
         pages:
           - path: /blockstack-cli
           - path: /stacking-contract
-          - path: /understand-stacks-2.0-api
+          - path: /stacks-blockchain-api
           - path: /stacks-node-configuration
           - external:
               href: 'https://blockstack.github.io/stacks.js/'

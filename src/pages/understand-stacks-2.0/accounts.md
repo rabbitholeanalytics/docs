@@ -118,7 +118,7 @@ Full documentation available at [stacks-gen](https://github.com/psq/stacks-gen).
 
 ### Get Stacks (STX) balance and nonce
 
-STX balance and nonce can be obtained through the [`GET /v2/accounts/<stx_address>`](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_account_info) endpoint:
+STX balance and nonce can be obtained through the [`GET /v2/accounts/<stx_address>`](https://blockstack.github.io/stacks-blockchain-api/#operation/get_account_info) endpoint:
 
 ```bash
 curl 'https://stacks-node-api.blockstack.org/v2/accounts/<stx_address>'
@@ -137,7 +137,7 @@ Sample response:
 
 ### Get all token balances
 
-All token balances can be obtained through the [`GET /extended/v1/address/<stx_address>/balances`](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_account_balance) endpoint:
+All token balances can be obtained through the [`GET /extended/v1/address/<stx_address>/balances`](https://blockstack.github.io/stacks-blockchain-api/#operation/get_account_balance) endpoint:
 
 ```bash
 curl 'https://stacks-node-api.blockstack.org/extended/v1/address/<stx_address>/balances'
@@ -161,7 +161,7 @@ Sample response:
 
 ### Get all asset events
 
-All asset events associated with the account can be obtained through the [`GET /extended/v1/address/<stx_address>/assets`](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_account_balance) endpoint:
+All asset events associated with the account can be obtained through the [`GET /extended/v1/address/<stx_address>/assets`](https://blockstack.github.io/stacks-blockchain-api/#operation/get_account_balance) endpoint:
 
 ```bash
 curl 'https://stacks-node-api.blockstack.org/extended/v1/address/<stx_address>/assets'

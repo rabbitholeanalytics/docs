@@ -89,7 +89,7 @@ INFO [1588108047.585] [src/chainstate/stacks/index/marf.rs:732] First-ever block
 
 **Awesome! Your node is now connected to the testnet network.**
 
-Your node will receive new blocks when they are produced, and you can use the [Stacks Node RPC API](/references/understand-stacks-2.0-api#stacks-node-rpc-api) to send transactions, fetch information for contracts and accounts, and more.
+Your node will receive new blocks when they are produced, and you can use the [Stacks Node RPC API](/references/stacks-blockchain-api#stacks-node-rpc-api) to send transactions, fetch information for contracts and accounts, and more.
 
 ## Optional: Running with Docker
 

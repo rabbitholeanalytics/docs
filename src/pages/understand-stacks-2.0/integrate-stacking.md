@@ -51,7 +51,7 @@ Install the stacks transactions library and an API client for the [Stacks 2.0 Bl
 npm install --save @blockstack/stacks-transactions @stacks/blockchain-api-client c32check cross-fetch bn.js
 ```
 
--> The API client is generated from the [OpenAPI specification](https://github.com/blockstack/understand-stacks-2.0-api/blob/master/docs/openapi.yaml) ([openapi-generator](https://github.com/OpenAPITools/openapi-generator)). Many other languages and frameworks are supported by the generator.
+-> The API client is generated from the [OpenAPI specification](https://github.com/blockstack/stacks-blockchain-api/blob/master/docs/openapi.yaml) ([openapi-generator](https://github.com/OpenAPITools/openapi-generator)). Many other languages and frameworks are supported by the generator.
 
 ## Step 2: Generating an account
 
@@ -117,7 +117,7 @@ const blocktimeInfo = await info.getNetworkBlockTimes();
 console.log({ poxInfo, coreInfo, blocktimeInfo });
 ```
 
--> Check out the API references for the 3 endpoints used here: [GET /v2/info](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_core_api_info), [GET v2/pox](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_pox_info), and [GET /extended/v1/info/network_block_times](https://blockstack.github.io/understand-stacks-2.0-api/#operation/get_network_block_times)
+-> Check out the API references for the 3 endpoints used here: [GET /v2/info](https://blockstack.github.io/stacks-blockchain-api/#operation/get_core_api_info), [GET v2/pox](https://blockstack.github.io/stacks-blockchain-api/#operation/get_pox_info), and [GET /extended/v1/info/network_block_times](https://blockstack.github.io/stacks-blockchain-api/#operation/get_network_block_times)
 
 The object, including PoX, core, and block time information, looks like this:
 
@@ -286,7 +286,7 @@ console.log({ isEligible: true });
 
 If the user is eligible, the stacking action should be enabled on the UI. If not, the respective error message should be shown to the user.
 
--> For more information on this read-only API call, please review the [API references](https://blockstack.github.io/understand-stacks-2.0-api/#operation/call_read_only_function)
+-> For more information on this read-only API call, please review the [API references](https://blockstack.github.io/stacks-blockchain-api/#operation/call_read_only_function)
 
 ## Step 5: Add stacking action
 

@@ -24,7 +24,7 @@ More information about the testnet:
 
 You can view accounts, blocks, transactions, and smart contracts broadcasted to the Stacks 2.0 blockchain using the [**Stacks 2.0 Explorer**](https://testnet-explorer.blockstack.org/).
 
--> The Explorer consumes the [Stacks 2.0 Blockchain API](https://blockstack.github.io/understand-stacks-2.0-api/). You can use this public API for programmatic access to the blockchain.
+-> The Explorer consumes the [Stacks 2.0 Blockchain API](https://blockstack.github.io/stacks-blockchain-api/). You can use this public API for programmatic access to the blockchain.
 
 ## Tutorials
 
