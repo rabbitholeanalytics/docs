@@ -73,7 +73,6 @@ const {
   serializeCV,
   deserializeCV,
   cvToString,
-  connectWebSocketClient,
   broadcastTransaction,
   standardPrincipalCV,
 } = require('@blockstack/stacks-transactions');
@@ -83,6 +82,7 @@ const {
   SmartContractsApi,
   Configuration,
   TransactionsApi,
+  connectWebSocketClient,
 } = require('@stacks/blockchain-api-client');
 const c32 = require('c32check');
 
