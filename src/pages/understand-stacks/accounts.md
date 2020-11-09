@@ -110,7 +110,7 @@ npx -q stacks-gen sk --testnet
 }
 ```
 
--> The stacking object with hashbytes and a version represents the bitcoin address derived from the Stacks address. Read more about the [bitcoin address format](/stacks-blockchain/stacking#bitcoin-address).
+-> The stacking object with hashbytes and a version represents the bitcoin address derived from the Stacks address. Read more about the [bitcoin address format](/understand-stacks/stacking#bitcoin-address).
 
 Full documentation available at [stacks-gen](https://github.com/psq/stacks-gen).
 
