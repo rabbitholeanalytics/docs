@@ -101,9 +101,12 @@ export const SearchBox: React.FC<BoxProps> = React.memo(props => {
     [importDocSearchModalIfNeeded, searchModal]
   );
 
-  const onClose = React.useCallback(function onClose() {
-    setState(state => ({ ...state, searchModal: 'closed' }));
-  }, [setState]);
+  const onClose = React.useCallback(
+    function onClose() {
+      setState(state => ({ ...state, searchModal: 'closed' }));
+    },
+    [setState]
+  );
 
   useEffect(() => {
     if (searchModal === 'open') onOpen();
