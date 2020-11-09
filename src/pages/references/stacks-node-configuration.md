@@ -29,7 +29,7 @@ stacks-node mocknet
 
 ### krypton (deprecated)
 
-Start a node that will join and stream blocks from the public krypton testnet, powered by Blockstack via [Proof of Transfer](https://docs.blockstack.org/understand-stacks-2/overview#proof-of-transfer-pox).
+Start a node that will join and stream blocks from the public krypton testnet, powered by Blockstack via [Proof of Transfer](https://docs.blockstack.org/understand-stacks/overview#proof-of-transfer-pox).
 
 Example:
 

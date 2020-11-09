@@ -13,10 +13,10 @@ images:
 
 ## Introduction
 
-Make sure you've followed the [Running testnet node](/understand-stacks-2/running-testnet-node) tutorial. Once completed it's only a few more steps to run a proof-of-burn miner on the testnet.
+Make sure you've followed the [Running testnet node](/understand-stacks/running-testnet-node) tutorial. Once completed it's only a few more steps to run a proof-of-burn miner on the testnet.
 
 [@page-reference | inline]
-| /understand-stacks-2/running-testnet-node
+| /understand-stacks/running-testnet-node
 
 ## Running a miner
 

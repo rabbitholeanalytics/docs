@@ -15,7 +15,7 @@ sections:
               - path: /public-registry-tutorial
               - path: /signing-transactions
       - path: /start-mining # is an overview page
-      - path: /understand-stacks-2
+      - path: /understand-stacks
         pages:
           - path: /overview
           - path: /testnet

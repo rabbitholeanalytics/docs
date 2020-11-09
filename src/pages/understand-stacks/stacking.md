@@ -33,7 +33,7 @@ The Stacking mechanism can be presented as a flow of actions:
 If you would like to implement this flow in your own wallet, exchange, or any other application, please have a look at this tutorial:
 
 [@page-reference | inline]
-| /understand-stacks-2/integrate-stacking
+| /understand-stacks/integrate-stacking
 
 ## PoX mining
 

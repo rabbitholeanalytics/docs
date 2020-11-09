@@ -16,9 +16,9 @@ The Stacks 2.0 blockchain is in active development. While the final release ("ma
 More information about the testnet:
 
 [@page-reference | inline]
-| /understand-stacks-2/testnet
+| /understand-stacks/testnet
 
-=> The status of the Stacks 2.0 network can be viewed on the [status checker](/understand-stacks-2/network#health-check)
+=> The status of the Stacks 2.0 network can be viewed on the [status checker](/understand-stacks/network#health-check)
 
 ## Explorer
 
@@ -29,7 +29,7 @@ You can view accounts, blocks, transactions, and smart contracts broadcasted to 
 ## Tutorials
 
 [@page-reference | grid-small]
-| /understand-stacks-2/managing-accounts, /understand-stacks-2/sending-tokens, /understand-stacks-2/running-testnet-node
+| /understand-stacks/managing-accounts, /understand-stacks/sending-tokens, /understand-stacks/running-testnet-node
 
 ## Features
 

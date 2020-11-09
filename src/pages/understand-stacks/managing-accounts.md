@@ -20,7 +20,7 @@ This tutorial will walk you through the following steps:
 - Reviewing account history
 - Getting account balances
 
--> This tutorial is NodeJS-specific. If you would like to understand how to manage Stacks 2.0 accounts using a different language/framework, please [review the accounts guide](/understand-stacks-2/accounts).
+-> This tutorial is NodeJS-specific. If you would like to understand how to manage Stacks 2.0 accounts using a different language/framework, please [review the accounts guide](/understand-stacks/accounts).
 
 ## Requirements
 
