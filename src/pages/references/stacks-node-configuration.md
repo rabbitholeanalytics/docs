@@ -29,7 +29,7 @@ stacks-node mocknet
 
 ### krypton (deprecated)
 
-Start a node that will join and stream blocks from the public krypton testnet, powered by Blockstack via [Proof of Transfer](https://docs.blockstack.org/understand-stacks-2.0/overview#proof-of-transfer-pox).
+Start a node that will join and stream blocks from the public krypton testnet, powered by Blockstack via [Proof of Transfer](https://docs.blockstack.org/understand-stacks-2/overview#proof-of-transfer-pox).
 
 Example:
 
@@ -87,7 +87,7 @@ stacks-node help
 
 The TOML configuration file has multiple sections under which an option may be placed.
 
-To see a list of example configurations, [please see this page](https://github.com/blockstack/understand-stacks-2.0/tree/master/testnet/stacks-node/conf).
+To see a list of example configurations, [please see this page](https://github.com/blockstack/stacks-blockchain/tree/master/testnet/stacks-node/conf).
 
 ### Section: node
 

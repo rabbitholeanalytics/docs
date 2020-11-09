@@ -33,7 +33,7 @@ The Stacking mechanism can be presented as a flow of actions:
 If you would like to implement this flow in your own wallet, exchange, or any other application, please have a look at this tutorial:
 
 [@page-reference | inline]
-| /understand-stacks-2.0/integrate-stacking
+| /understand-stacks-2/integrate-stacking
 
 ## PoX mining
 
@@ -64,7 +64,7 @@ Token holders will have to use software like apps, exchanges, or wallets that su
 
 ## Stacking consensus algorithm
 
-Stacking is a built-in capability of PoX and is realized through a set of actions on the Stacks 2.0 network. The full implementation details can be found in [SIP-007](https://github.com/blockstack/understand-stacks-2.0/blob/develop/sip/sip-007-stacking-consensus.md). Below is a summary of the most relevant actions of the algorithm.
+Stacking is a built-in capability of PoX and is realized through a set of actions on the Stacks 2.0 network. The full implementation details can be found in [SIP-007](https://github.com/blockstack/stacks-blockchain/blob/develop/sip/sip-007-stacking-consensus.md). Below is a summary of the most relevant actions of the algorithm.
 
 - Progression in Stacking consensus happens over reward cycles (with a fixed length). In each reward cycle, a set of Bitcoin addresses are iterated over
 - A reward cycle consists of two phases: prepare and reward

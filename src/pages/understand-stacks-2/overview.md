@@ -7,7 +7,7 @@ description: Learn more about the Stacks blockchain
 
 Stacks 2.0 is a layer 1 blockchain that enables people to register digital assets and write smart contracts. It connects to Bitcoin with a 1:1 block ratio, meaning anything that happens on the Stacks blockchain can be verified on the Bitcoin Blockchain. It implements a new mining mechanism called Proof of Transfer (PoX). PoX uses an established blockchain (in this case Bitcoin) to secure a new blockchain (Stacks).
 
--> The Stacks 2.0 blockchain is open-source and the code is available on GitHub: [blockstack/stacks-blockstack](https://github.com/blockstack/understand-stacks-2.0).
+-> The Stacks 2.0 blockchain is open-source and the code is available on GitHub: [blockstack/stacks-blockstack](https://github.com/blockstack/stacks-blockchain).
 
 ## Status
 
@@ -16,9 +16,9 @@ The Stacks 2.0 blockchain is in active development. While the final release ("ma
 More information about the testnet:
 
 [@page-reference | inline]
-| /understand-stacks-2.0/testnet
+| /understand-stacks-2/testnet
 
-=> The status of the Stacks 2.0 network can be viewed on the [status checker](/understand-stacks-2.0/network#health-check)
+=> The status of the Stacks 2.0 network can be viewed on the [status checker](/understand-stacks-2/network#health-check)
 
 ## Explorer
 
@@ -29,7 +29,7 @@ You can view accounts, blocks, transactions, and smart contracts broadcasted to 
 ## Tutorials
 
 [@page-reference | grid-small]
-| /understand-stacks-2.0/managing-accounts, /understand-stacks-2.0/sending-tokens, /understand-stacks-2.0/running-testnet-node
+| /understand-stacks-2/managing-accounts, /understand-stacks-2/sending-tokens, /understand-stacks-2/running-testnet-node
 
 ## Features
 
@@ -72,6 +72,6 @@ Stacks (STX) token holders can help secure the network by participating in Stack
 The Stacks 2.0 blockchain specification consists a set of proposals, called Stacks improvement proposals (SIPs). Each SIP describes the implementation of a part of the Stacks 2.0 blockchain. Together, all proposals contain concise technical specifications of features or standards and the rationale
 behind them.
 
-These SIPs can be found [here](https://github.com/blockstack/understand-stacks-2.0/blob/master/sip/).
+These SIPs can be found [here](https://github.com/blockstack/stacks-blockchain/blob/master/sip/).
 
--> See [SIP 000](https://github.com/blockstack/understand-stacks-2.0/blob/master/sip/sip-000-stacks-improvement-proposal-process.md) for more details about the SIPs process..
+-> See [SIP 000](https://github.com/blockstack/stacks-blockchain/blob/master/sip/sip-000-stacks-improvement-proposal-process.md) for more details about the SIPs process..

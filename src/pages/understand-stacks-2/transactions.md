@@ -5,14 +5,14 @@ description: Guide to Stacks 2.0 transactions
 
 ## Introduction
 
-Transactions are the fundamental unit of execution in the Stacks blockchain. Each transaction is originated from a [Stacks 2.0 account](/understand-stacks-2.0/accounts), and is retained in the Stacks blockchain history for eternity. This guide helps you understand Stacks 2.0 transactions.
+Transactions are the fundamental unit of execution in the Stacks blockchain. Each transaction is originated from a [Stacks 2.0 account](/understand-stacks-2/accounts), and is retained in the Stacks blockchain history for eternity. This guide helps you understand Stacks 2.0 transactions.
 
 If you want to jump right in and broadcast your first transaction, try this tutorial:
 
 [@page-reference | inline]
-| /understand-stacks-2.0/sending-tokens
+| /understand-stacks-2/sending-tokens
 
--> The information on this page is based on a design proposal. You can find more conceptual details in this document: [SIP 005: Blocks, Transaction, Accounts](https://github.com/blockstack/understand-stacks-2.0/blob/master/sip/sip-005-blocks-and-transactions.md).
+-> The information on this page is based on a design proposal. You can find more conceptual details in this document: [SIP 005: Blocks, Transaction, Accounts](https://github.com/blockstack/stacks-blockchain/blob/master/sip/sip-005-blocks-and-transactions.md).
 
 ## Lifecycle
 
@@ -45,7 +45,7 @@ The Stacks 2.0 supports a set of different transaction types:
 
 A sample of each transaction type can be found in the [Stacks Blockchain API response definition for transactions](https://blockstack.github.io/stacks-blockchain-api/#operation/get_transaction_by_id).
 
-~> Read-only contract call calls do **not** require transactions. Read more about it in the [network guide](/understand-stacks-2.0/network#read-only-function-calls).
+~> Read-only contract call calls do **not** require transactions. Read more about it in the [network guide](/understand-stacks-2/network#read-only-function-calls).
 
 ## Post-conditions
 
@@ -83,13 +83,13 @@ The signing flow for sponsored transactions would be to have the user first sign
 
 A transaction includes the following information. Multiple-byte fields are encoded as big-endian.
 
-| **Type**        | **Description**                                                                                                                                                                                                               |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Version number  | Network version. `0x80` for testnet, `0x0` for mainnet                                                                                                                                                                        |
-| Chain ID        | Chain instance ID. `0x80000000` for testnet, `0x00000001` for mainnet                                                                                                                                                         |
-| Authorization   | Type of authorization (`0x04` for standard, `0x05` for sponsored) and [spending conditions](https://github.com/blockstack/understand-stacks-2.0/blob/master/sip/sip-005-blocks-and-transactions.md#transaction-authorization) |
-| Post-conditions | List of post-conditions, each including a [type ID and variable-length condition body](https://github.com/blockstack/understand-stacks-2.0/blob/master/sip/sip-005-blocks-and-transactions.md#transaction-post-conditions-1)  |
-| Payload         | Transaction type and variable-length [payload](https://github.com/blockstack/understand-stacks-2.0/blob/master/sip/sip-005-blocks-and-transactions.md#transaction-payloads-1)                                                 |
+| **Type**        | **Description**                                                                                                                                                                                                           |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Version number  | Network version. `0x80` for testnet, `0x0` for mainnet                                                                                                                                                                    |
+| Chain ID        | Chain instance ID. `0x80000000` for testnet, `0x00000001` for mainnet                                                                                                                                                     |
+| Authorization   | Type of authorization (`0x04` for standard, `0x05` for sponsored) and [spending conditions](https://github.com/blockstack/stacks-blockchain/blob/master/sip/sip-005-blocks-and-transactions.md#transaction-authorization) |
+| Post-conditions | List of post-conditions, each including a [type ID and variable-length condition body](https://github.com/blockstack/stacks-blockchain/blob/master/sip/sip-005-blocks-and-transactions.md#transaction-post-conditions-1)  |
+| Payload         | Transaction type and variable-length [payload](https://github.com/blockstack/stacks-blockchain/blob/master/sip/sip-005-blocks-and-transactions.md#transaction-payloads-1)                                                 |
 
 ## Construction
 
@@ -99,7 +99,7 @@ The easiest way to construct well-formed transactions is by [using the Stacks Tr
 - Smart contract deploy
 - Smart contract function call
 
-When constructing transactions, it is required to set the network the transaction is intended for. This can be either mainnet or testnet. At the moment of this writing, the only available option is the [testnet network](/understand-stacks-2.0/testnet).
+When constructing transactions, it is required to set the network the transaction is intended for. This can be either mainnet or testnet. At the moment of this writing, the only available option is the [testnet network](/understand-stacks-2/testnet).
 
 -> Transactions can be constructed and serialized offline. However, it is required to know the nonce and estimated fees ahead of time. Once internet access is available, the transaction can be broadcasted to the network. Keep in mind that the nonce and fee might change during offline activity, making the transaction invalid.
 
@@ -122,7 +122,7 @@ const txOptions = {
 const transaction = await makeSTXTokenTransfer(txOptions);
 ```
 
--> Read more about [nonces](/understand-stacks-2.0/network#nonces) in the network guide
+-> Read more about [nonces](/understand-stacks-2/network#nonces) in the network guide
 
 ### Smart contract deployment
 
@@ -162,7 +162,7 @@ const transaction = await makeContractCall(txOptions);
 
 ### Clarity value types
 
-Building transactions that call functions in deployed clarity contracts requires you to construct valid Clarity Values to pass to the function as arguments. The [Clarity type system](https://github.com/blockstack/understand-stacks-2.0/blob/master/sip/sip-002-smart-contract-language.md#clarity-type-system) contains the following types:
+Building transactions that call functions in deployed clarity contracts requires you to construct valid Clarity Values to pass to the function as arguments. The [Clarity type system](https://github.com/blockstack/stacks-blockchain/blob/master/sip/sip-002-smart-contract-language.md#clarity-type-system) contains the following types:
 
 | Type             | Declaration                                                  | Description                                                                                                                                                                         |
 | ---------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -480,7 +480,7 @@ Sample response:
 
 #### Filter by type
 
-Recent transactions can be filtered by [transaction type](/understand-stacks-2.0/transactions#types) using the `type` query parameter:
+Recent transactions can be filtered by [transaction type](/understand-stacks-2/transactions#types) using the `type` query parameter:
 
 ```bash
 curl 'https://stacks-node-api.blockstack.org/extended/v1/tx/?type=contract_call'

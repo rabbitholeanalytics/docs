@@ -103,7 +103,7 @@ async function redirects() {
     },
     {
       source: '/core/smart/testnet-node.html',
-      destination: '/understand-stacks-2.0/running-testnet-node',
+      destination: '/understand-stacks-2/running-testnet-node',
       permanent: true,
     },
     {
@@ -228,17 +228,17 @@ async function redirects() {
     },
     {
       source: '/core/atlas/overview.html',
-      destination: '/understand-stacks-2.0/atlas-overview',
+      destination: '/understand-stacks-2/atlas-overview',
       permanent: true,
     },
     {
       source: '/core/atlas/howitworks.html',
-      destination: '/understand-stacks-2.0/atlas-how-it-works',
+      destination: '/understand-stacks-2/atlas-how-it-works',
       permanent: true,
     },
     {
       source: '/core/atlas/howtouse.html',
-      destination: '/understand-stacks-2.0/atlas-usage',
+      destination: '/understand-stacks-2/atlas-usage',
       permanent: true,
     },
     { source: '/org/overview.html', destination: '/ecosystem/overview', permanent: true },
@@ -336,7 +336,7 @@ async function redirects() {
     },
     {
       source: '/core/wire-format.html',
-      destination: '/understand-stacks-2.0/wire-format',
+      destination: '/understand-stacks-2/wire-format',
       permanent: true,
     },
     {
@@ -352,9 +352,11 @@ async function redirects() {
     },
     { source: '/org/terms.html', destination: '/references/glossary', permanent: true },
     // overview redirects
+    { source: '/stacks-blockchain', destination: '/understand-stacks-2/overview', permanent: true },
+    { source: '/smart-contracts', destination: '/write-smart-contracts/overview', permanent: true },
     {
-      source: '/understand-stacks-2.0',
-      destination: '/understand-stacks-2.0/overview',
+      source: '/understand-stacks-2',
+      destination: '/understand-stacks-2/overview',
       permanent: true,
     },
     {
@@ -371,23 +373,43 @@ async function redirects() {
     { source: '/references', destination: '/references/blockstack-cli', permanent: true },
     { source: '/ecosystem', destination: '/ecosystem/overview', permanent: true },
     {
-      source: '/understand-stacks-2.0/testnet-node',
-      destination: '/understand-stacks-2.0/running-testnet-node',
+      source: '/stacks-blockchain/testnet-node',
+      destination: '/understand-stacks-2/running-testnet-node',
       permanent: true,
     },
     {
-      source: '/understand-stacks-2.0/atlas/overview',
-      destination: '/understand-stacks-2.0/atlas-overview',
+      source: '/understand-stacks-2/testnet-node',
+      destination: '/understand-stacks-2/running-testnet-node',
       permanent: true,
     },
     {
-      source: '/understand-stacks-2.0/atlas/how-atlas-works',
-      destination: '/understand-stacks-2.0/atlas-how-it-works',
+      source: '/stacks-blockchain/atlas/overview',
+      destination: '/understand-stacks-2/atlas-overview',
       permanent: true,
     },
     {
-      source: '/understand-stacks-2.0/atlas/usage',
-      destination: '/understand-stacks-2.0/atlas-usage',
+      source: '/understand-stacks-2/atlas/overview',
+      destination: '/understand-stacks-2/atlas-overview',
+      permanent: true,
+    },
+    {
+      source: '/stacks-blockchain/atlas/how-atlas-works',
+      destination: '/understand-stacks-2/atlas-how-it-works',
+      permanent: true,
+    },
+    {
+      source: '/understand-stacks-2/atlas/how-atlas-works',
+      destination: '/understand-stacks-2/atlas-how-it-works',
+      permanent: true,
+    },
+    {
+      source: '/stacks-blockchain/atlas/usage',
+      destination: '/understand-stacks-2/atlas-usage',
+      permanent: true,
+    },
+    {
+      source: '/understand-stacks-2/atlas/usage',
+      destination: '/understand-stacks-2/atlas-usage',
       permanent: true,
     },
     // data indexing changes
